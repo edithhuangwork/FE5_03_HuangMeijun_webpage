@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./index.css">
+    <title>Home - PathPals</title>
+</head>
+<body>
+<nav class="navbar">
+    <div class="containter navbar-flex">
+        <div class="logo-section">
+        <img src="./logo_icon.png" alt="PathPals Logo" class="logo-icon">
+        <span class="logo-text">PathPals</span>
+        </div>
+        <div class="main-menu">
+            <ul class="main-menu-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Kyoto</a></li>
+            <li><a href="#">Paris</a></li>
+            <li><a href="#">Milan</a></li>
+            <li><a href="#">Cairo</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu">
+            <div class="mobile-menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="mobile-menu-items">
+                <ul class="mobile-menu-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Kyoto</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Milan</a></li>
+                <li><a href="#">Cairo</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<footer id="contact">
+    <h3>✉️ Contact Us ✉️</h3>
+    <form id="contact-form">
+        <div class="form-group details">
+            <label for="name">Name</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="Enter your name" 
+                minlength="5" 
+                maxlength="25"
+                required
+            />
+        </div>
+        <div class="form-group details">
+            <label for="email">Email</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Enter your email"
+                required
+            />
+        </div>
+        <div class="form-group details">
+            <label for="message">Message</label>
+            <textarea
+                name="message" 
+                id="message" 
+                placeholder="Enter your message" 
+                rows="4"
+                cols="40"
+                style="resize:none"
+                required
+            ></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Send Message</button>
+        </div>
+    </form>
+    <p>© Copyright 2026 PathPals Limited. All rights reserved</p>
+</footer>
+
+<script src="./index.js"></script>
+</body>
+</html>
+
+
+<!-- 📱 首頁 (Home)
+├── 網站標題 + 英雄圖（4地點輪播）
+├── 導覽列（首頁|關於|京都|巴黎|里約|開普敦|聯絡）
+└── 4個地點預覽卡片（圖片+名稱）
+
+📜 關於我們 (About)
+├── 網站介紹 + 創作者故事
+├── 旅遊貼士 + 設計理念
+└── 影片：為什麼愛旅行？
+
+🌸 日本 - 京都 (Kyoto, Japan)
+├── 歷史：平安京背景
+├── 文化：茶道、花道、和服
+├── 景點：金閣寺、清水寺、伏見稻荷
+├── 實用：最佳季節、天氣、費用、交通
+└── 影片：京都四季美景
+
+🗼 法國 - 巴黎 (Paris, France)
+├── 歷史：羅馬時期至今
+├── 文化：時尚、美食、藝術
+├── 景點：艾菲爾鐵塔、羅浮宮、聖母院
+├── 實用：簽證、住宿推薦、地鐵圖
+└── 影片：塞納河遊船
+
+🏖️ 巴西 - 里約熱內盧 (Rio de Janeiro, Brazil)
+├── 歷史：殖民時期、狂歡節起源
+├── 文化：桑巴舞、足球、嘉年華
+├── 景點：基督像、糖 loaf山、科帕卡巴納海灘
+├── 實用：安全須知、巴西雷亞爾匯率
+└── 影片：狂歡節巡遊
+
+🦒 南非 - 開普敦 (Cape Town, South Africa)
+├── 歷史：桌山殖民史、種族隔離
+├── 文化：彩虹國家、多語文化
+├── 景點：桌山、好望角、企鵝灘
+├── 實用：疫苗要求、野生動物注意事項
+└── 影片：桌山纜車全景
+
+✉️ 聯絡我們 (Contact)
+├── 聯絡表單（姓名、Email、訊息）
+├── 社群連結 + QR Code
+└── 地圖：香港出發交通樞紐 -->
