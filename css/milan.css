@@ -1,0 +1,386 @@
+/* 全局基础样式 - 适配米兰的意式日系融合风格 */
+:root {
+  /* 主色调：米白/暖驼/意式酒红（替换原京都深红，更贴合米兰时尚感） */
+  --color-offwhite: #f9f7f4; /* 更柔和的米白，模拟意大利手工纸质感 */
+  --color-warmcamel: #e8d9c4; /* 暖驼色，呼应米兰古典建筑的石材色调 */
+  --color-italianred: #8b2635; /* 意式酒红，低调奢华的时尚点缀 */
+  --color-darkcharcoal: #3a3836; /* 深炭灰，替代纯黑，更显高级 */
+  --color-lightbeige: #f5f0e8; /* 浅米色，用于轻背景 */
+  /* 字体：保留衬线+手写体，强化意式优雅 */
+  --font-serif: 'Noto Serif SC', serif;
+  --font-handwriting: 'Ma Shan Zheng', cursive; /* 手写体注释 */
+  --font-italic: 'Playfair Display', italic; /* 新增意大利斜体，贴合米兰时尚感 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-serif);
+  background-color: var(--color-offwhite);
+  color: var(--color-darkcharcoal);
+  line-height: 1.8;
+  letter-spacing: 0.01em; /* 略收紧字距，更显精致 */
+}
+
+/* 引入字体（新增Playfair Display斜体，强化意式风格） */
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+/* 导航栏（极简+意式轻奢） */
+.navbar {
+  background-color: var(--color-offwhite);
+  border-bottom: 1px solid var(--color-warmcamel);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* 1. Hero Banner - 米兰地标背景+意式竖排/手写注释 */
+.destination-hero {
+  height: 80vh;
+  background: linear-gradient(rgba(249, 247, 244, 0.85), rgba(249, 247, 244, 0.7)), 
+              url('https://images.unsplash.com/photo-1543936415-f21c046b0904?q=80&w=2070') center/cover no-repeat; /* 米兰大教堂背景 */
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.milan-hero .container {
+  padding: 0;
+  position: relative;
+}
+
+.destination-title {
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--color-italianred);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  position: relative;
+  font-family: 'Playfair Display', serif; /* 意式衬线，更贴合米兰 */
+}
+
+/* 意大利语竖排装饰（替换原日文，保留日系排版逻辑） */
+.destination-title small {
+  font-size: 2rem;
+  color: var(--color-darkcharcoal);
+  writing-mode: vertical-rl; /* 竖排文字，日系杂志核心 */
+  position: absolute;
+  right: -80px;
+  top: 0;
+  letter-spacing: 0.3em;
+  font-style: italic; /* 斜体强化意式风格 */
+}
+
+.destination-subtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  color: var(--color-darkcharcoal);
+  padding-left: 2rem;
+  border-left: 3px solid var(--color-italianred);
+  font-style: italic; /* 轻微斜体，提升时尚感 */
+}
+
+/* 手写体注释 + 箭头（米兰主题：时尚×古典） */
+.destination-hero::after {
+  content: "Milano | 古典与时尚的交织";
+  font-family: var(--font-handwriting);
+  font-size: 1.5rem;
+  color: var(--color-italianred);
+  position: absolute;
+  bottom: 4rem;
+  right: 8rem;
+  transform: rotate(-3deg); /* 轻微旋转，模拟杂志手写批注 */
+}
+
+.destination-hero::before {
+  content: "→";
+  font-size: 2rem;
+  color: var(--color-italianred);
+  position: absolute;
+  bottom: 6rem;
+  right: 6rem;
+  transform: rotate(-3deg);
+}
+
+/* 2. 通用章节样式 - 不对称网格+意式精致感 */
+.destination-section {
+  margin-bottom: 8rem;
+  position: relative;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 4rem;
+  color: var(--color-darkcharcoal);
+  position: relative;
+  display: inline-block;
+  font-family: 'Playfair Display', serif; /* 意式衬线标题 */
+}
+
+/* 章节标题装饰线（意式酒红+细线条，更精致） */
+.section-title::after {
+  content: "";
+  width: 120px;
+  height: 2px; /* 更细的线条，贴合米兰时尚感 */
+  background-color: var(--color-italianred);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+.section-title small {
+  font-size: 1rem;
+  color: var(--color-italianred);
+  margin-left: 1rem;
+  font-style: italic;
+}
+
+/* 浅米色背景章节（替代原暖灰，更贴合米兰） */
+.section-light-bg {
+  background-color: var(--color-lightbeige);
+  margin: 5rem 0;
+  padding: 3rem 0;
+}
+
+/* 3. History Section - 不对称网格+意式建筑图片质感 */
+.section-content-split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr; /* 轻微不对称，更柔和 */
+  gap: 4rem;
+  align-items: center;
+}
+
+.content-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  font-weight: 400;
+}
+
+.content-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  box-shadow: 8px 8px 0 var(--color-warmcamel); /* 暖驼色阴影，替代原暖灰 */
+  transition: all 0.5s ease;
+}
+
+/* 图片hover胶片质感（调整滤镜，贴合米兰复古时尚） */
+.content-image img:hover,
+.attraction-card img:hover {
+  filter: sepia(40%) contrast(105%) brightness(95%) saturate(110%); /* 更柔和的胶片感，不突兀 */
+  transform: scale(1.02);
+}
+
+/* 4. Culture Section - 时尚感卡片网格 */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  grid-template-columns: 1fr 1.1fr 1fr; /* 不对称网格，中间卡片略宽 */
+}
+
+.feature-card {
+  background-color: white;
+  padding: 3rem 2rem;
+  border-radius: 0; /* 无圆角，日系极简+意式利落 */
+  border-top: 2px solid var(--color-italianred); /* 细边框，更精致 */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.03); /* 更浅的阴影，贴合时尚感 */
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px); /* 轻微上浮，更轻盈 */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--color-italianred);
+  margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-darkcharcoal);
+  font-family: 'Playfair Display', serif;
+}
+
+/* 5. Attractions Section - 米兰地标不对称网格 */
+.attractions-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 不对称：大教堂卡片跨两行，突出核心地标 */
+  grid-template-rows: auto auto;
+  gap: 2rem;
+}
+
+/* 第一个卡片（米兰大教堂）跨两行，视觉重点 */
+.attractions-grid .attraction-card:first-child {
+  grid-row: 1 / 3;
+}
+
+.attraction-card {
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.attraction-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.attraction-card figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.65)); /* 更浅的渐变，贴合时尚感 */
+  color: white;
+  transform: translateY(30%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.attraction-card:hover figcaption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.attraction-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-offwhite);
+  font-family: 'Playfair Display', serif;
+}
+
+.attraction-card h3 small {
+  font-size: 1rem;
+  color: var(--color-warmcamel);
+  font-style: italic;
+}
+
+.attraction-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* 米兰景点手写体注释（意式风格） */
+#attractions::after {
+  content: "Milano | 时尚之都的经典地标";
+  font-family: var(--font-handwriting);
+  font-size: 1.5rem;
+  color: var(--color-italianred);
+  position: absolute;
+  top: -2rem;
+  right: 2rem;
+  transform: rotate(2deg);
+  z-index: 1;
+}
+
+/* 6. Practical Info Section - 意式实用信息列表 */
+.info-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 两列网格，更整洁 */
+  gap: 2rem;
+}
+
+.info-list li {
+  padding: 1.5rem;
+  background-color: white;
+  border-left: 2px solid var(--color-italianred);
+}
+
+.info-list li strong {
+  color: var(--color-italianred);
+  margin-right: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+/* 7. Video Section - 视频容器样式 */
+.video-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border: none;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1); /* 柔和阴影，贴合时尚感 */
+}
+
+/* 8. 响应式适配（保留核心风格） */
+@media (max-width: 1200px) {
+  .destination-title {
+    font-size: 4.5rem;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .attractions-grid {
+    grid-template-columns: 1fr;
+  }
+  .attractions-grid .attraction-card:first-child {
+    grid-row: auto;
+  }
+  .info-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .destination-title {
+    font-size: 3rem;
+  }
+  .destination-title small {
+    writing-mode: horizontal-tb;
+    position: static;
+    display: block;
+    margin-top: 1rem;
+  }
+  .section-content-split {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .destination-hero::after,
+  .destination-hero::before {
+    display: none;
+  }
+  .video-container iframe {
+    height: 300px;
+  }
+}
+
+/* 页脚（意式极简+日系质感） */
+.footer {
+  background-color: var(--color-warmcamel);
+  padding: 3rem 0;
+  text-align: center;
+  color: var(--color-darkcharcoal);
+  font-size: 1rem;
+  font-style: italic; /* 斜体强化意式风格 */
+}

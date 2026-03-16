@@ -1,0 +1,402 @@
+/* 全局基础样式 - 适配巴黎的法式日系融合风格 */
+:root {
+  /* 主色调：奶油米白/浅灰褐/法式勃艮第红（层次化色调，贴合巴黎浪漫艺术感） */
+  --color-creamwhite: #faf7f2; /* 奶油米白，模拟巴黎老建筑的石材肌理 */
+  --color-taupe: #d9cfc1; /* 浅灰褐（陶土色），呼应巴黎石板路/复古墙面 */
+  --color-burgundy: #7a2734; /* 法式勃艮第红（深浅适中），浪漫又高级 */
+  --color-deepbrown: #423b37; /* 深棕灰，替代纯黑，更显法式复古 */
+  --color-palebeige: #f2eee8; /* 浅米色，用于轻背景，增加层次 */
+  /* 字体：保留衬线+手写体，新增法式优雅斜体 */
+  --font-serif: 'Noto Serif SC', serif;
+  --font-handwriting: 'Ma Shan Zheng', cursive; /* 手写体注释 */
+  --font-french: 'Cormorant Garamond', serif; /* 法式古典衬线，强化巴黎艺术感 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-serif);
+  background-color: var(--color-creamwhite);
+  color: var(--color-deepbrown);
+  line-height: 1.85; /* 略宽松行高，贴合法式优雅 */
+  letter-spacing: 0.015em;
+}
+
+/* 引入字体（新增Cormorant Garamond法式衬线） */
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+/* 导航栏（法式极简+日系质感） */
+.navbar {
+  background-color: var(--color-creamwhite);
+  border-bottom: 1px solid var(--color-taupe);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* 1. Hero Banner - 巴黎地标背景+法式竖排/手写注释 */
+.destination-hero {
+  height: 80vh;
+  background: linear-gradient(rgba(250, 247, 242, 0.88), rgba(250, 247, 242, 0.75)), 
+              url('https://images.unsplash.com/photo-1502602898657-3e91760c0337?q=80&w=2070') center/cover no-repeat; /* 巴黎街景背景 */
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.paris-hero .container {
+  padding: 0;
+  position: relative;
+}
+
+.destination-title {
+  font-size: 6.2rem;
+  font-weight: 700;
+  color: var(--color-burgundy);
+  line-height: 1.05;
+  margin-bottom: 1.2rem;
+  position: relative;
+  font-family: var(--font-french); /* 法式衬线标题，更贴合巴黎 */
+}
+
+/* 法语竖排装饰（保留日系排版，替换为法式文字） */
+.destination-title::after {
+  content: "La Ville Lumière"; /* 光之城（法语） */
+  font-size: 1.8rem;
+  color: var(--color-deepbrown);
+  writing-mode: vertical-rl; /* 竖排文字，日系核心 */
+  position: absolute;
+  right: -90px;
+  top: 0;
+  letter-spacing: 0.4em;
+  font-style: italic; /* 法式斜体 */
+  font-family: var(--font-french);
+}
+
+.destination-subtitle {
+  font-size: 1.3rem;
+  max-width: 650px;
+  color: var(--color-deepbrown);
+  padding-left: 2rem;
+  border-left: 3px solid var(--color-burgundy);
+  font-style: italic; /* 法式斜体，提升浪漫感 */
+  font-family: var(--font-french);
+}
+
+/* 手写体注释 + 箭头（巴黎主题：浪漫×艺术） */
+.destination-hero::after {
+  content: "Paris | La ville éternelle de l'art et du romantisme";
+  font-family: var(--font-handwriting);
+  font-size: 1.6rem;
+  color: var(--color-burgundy);
+  position: absolute;
+  bottom: 4rem;
+  right: 8rem;
+  transform: rotate(-4deg); /* 模拟杂志手写批注 */
+}
+
+.destination-hero::before {
+  content: "→";
+  font-size: 2.2rem;
+  color: var(--color-burgundy);
+  position: absolute;
+  bottom: 6.2rem;
+  right: 6rem;
+  transform: rotate(-4deg);
+}
+
+/* 2. 通用章节样式 - 不对称网格+法式艺术感 */
+.destination-section {
+  margin-bottom: 8.5rem;
+  position: relative;
+}
+
+.section-title {
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin-bottom: 4.2rem;
+  color: var(--color-deepbrown);
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-french); /* 法式衬线标题 */
+}
+
+/* 章节标题装饰线（勃艮第红+渐变，强化法式浪漫） */
+.section-title::after {
+  content: "";
+  width: 130px;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--color-burgundy), rgba(122, 39, 52, 0.5)); /* 渐变装饰线 */
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  border-radius: 1px;
+}
+
+.section-title small {
+  font-size: 1.1rem;
+  color: var(--color-burgundy);
+  margin-left: 1.2rem;
+  font-style: italic;
+  font-family: var(--font-french);
+}
+
+/* 浅米色背景章节（法式轻复古） */
+.section-light-bg {
+  background-color: var(--color-palebeige);
+  margin: 5.5rem 0;
+  padding: 3.2rem 0;
+}
+
+/* 3. History Section - 不对称网格+巴黎复古建筑质感 */
+.section-content-split {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr; /* 轻微不对称，更柔和 */
+  gap: 4.2rem;
+  align-items: center;
+}
+
+.content-text p {
+  font-size: 1.15rem;
+  margin-bottom: 1.6rem;
+  text-align: justify;
+  font-weight: 400;
+  font-family: var(--font-french); /* 法式字体提升文本质感 */
+}
+
+.content-image img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  box-shadow: 9px 9px 0 var(--color-taupe); /* 浅灰褐阴影，贴合巴黎石板路色调 */
+  transition: all 0.5s ease;
+}
+
+/* 图片hover胶片质感（法式复古滤镜，更柔和） */
+.content-image img:hover,
+.attraction-card img:hover {
+  filter: sepia(35%) contrast(103%) brightness(98%) saturate(105%) hue-rotate(2deg); /* 微暖色调，贴合巴黎浪漫感 */
+  transform: scale(1.02);
+}
+
+/* 4. Culture Section - 法式艺术感卡片网格 */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+  grid-template-columns: 1fr 1.15fr 1fr; /* 不对称网格，中间卡片略宽 */
+}
+
+.feature-card {
+  background-color: white;
+  padding: 3.2rem 2.2rem;
+  border-radius: 0; /* 无圆角，日系极简+法式利落 */
+  border-top: 2.5px solid var(--color-burgundy); /* 略粗边框，强化艺术感 */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.04); /* 柔和阴影，贴合法式浪漫 */
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-9px); /* 轻盈上浮，更显浪漫 */
+  box-shadow: 0 9px 18px rgba(0,0,0,0.09);
+}
+
+.feature-icon {
+  font-size: 2.7rem;
+  color: var(--color-burgundy);
+  margin-bottom: 1.6rem;
+}
+
+.feature-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.1rem;
+  color: var(--color-deepbrown);
+  font-family: var(--font-french);
+}
+
+.feature-card h3 small {
+  font-size: 1rem;
+  color: var(--color-burgundy);
+  margin-left: 0.8rem;
+}
+
+/* 5. Attractions Section - 巴黎地标不对称网格 */
+.attractions-grid {
+  display: grid;
+  grid-template-columns: 2.1fr 1fr; /* 埃菲尔铁塔卡片跨两行，突出核心地标 */
+  grid-template-rows: auto auto;
+  gap: 2.2rem;
+}
+
+/* 第一个卡片（埃菲尔铁塔）跨两行，视觉重点 */
+.attractions-grid .attraction-card:first-child {
+  grid-row: 1 / 3;
+}
+
+.attraction-card {
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.attraction-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.attraction-card figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.2rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.68)); /* 柔和渐变，贴合浪漫感 */
+  color: white;
+  transform: translateY(30%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.attraction-card:hover figcaption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.attraction-card h3 {
+  font-size: 1.9rem;
+  margin-bottom: 0.6rem;
+  color: var(--color-creamwhite);
+  font-family: var(--font-french);
+}
+
+.attraction-card h3 small {
+  font-size: 1.05rem;
+  color: var(--color-taupe);
+  font-style: italic;
+}
+
+.attraction-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* 巴黎景点手写体注释（法式浪漫风格） */
+#attractions::after {
+  content: "Paris | 埃菲尔铁塔下的浪漫";
+  font-family: var(--font-handwriting);
+  font-size: 1.6rem;
+  color: var(--color-burgundy);
+  position: absolute;
+  top: -2.2rem;
+  right: 2.2rem;
+  transform: rotate(3deg);
+  z-index: 1;
+}
+
+/* 6. Practical Info Section - 法式实用信息列表 */
+.info-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 两列网格，整洁有序 */
+  gap: 2.2rem;
+}
+
+.info-list li {
+  padding: 1.8rem;
+  background-color: white;
+  border-left: 2.5px solid var(--color-burgundy);
+  font-family: var(--font-french);
+}
+
+.info-list li strong {
+  color: var(--color-burgundy);
+  margin-right: 0.6rem;
+  font-family: var(--font-french);
+  font-weight: 600;
+}
+
+/* 7. Video Section - 视频容器样式（法式优雅） */
+.video-container {
+  text-align: center;
+  margin-top: 2.2rem;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 820px;
+  height: 460px;
+  border: none;
+  box-shadow: 0 0 22px rgba(0,0,0,0.08); /* 柔和阴影，贴合法式浪漫 */
+}
+
+/* 8. 响应式适配（保留核心风格） */
+@media (max-width: 1200px) {
+  .destination-title {
+    font-size: 4.8rem;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+  }
+  .attractions-grid {
+    grid-template-columns: 1fr;
+  }
+  .attractions-grid .attraction-card:first-child {
+    grid-row: auto;
+  }
+  .info-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .destination-title {
+    font-size: 3.2rem;
+  }
+  .destination-title::after {
+    writing-mode: horizontal-tb;
+    position: static;
+    display: block;
+    margin-top: 1.2rem;
+    right: 0;
+  }
+  .section-content-split {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .destination-hero::after,
+  .destination-hero::before {
+    display: none;
+  }
+  .video-container iframe {
+    height: 310px;
+  }
+}
+
+/* 页脚（法式复古+日系质感） */
+.footer {
+  background-color: var(--color-taupe);
+  padding: 3.2rem 0;
+  text-align: center;
+  color: var(--color-deepbrown);
+  font-size: 1.05rem;
+  font-style: italic; /* 法式斜体 */
+  font-family: var(--font-french);
+}
