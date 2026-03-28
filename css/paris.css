@@ -1,32 +1,25 @@
-/* 全局基础样式 - 适配巴黎的法式日系融合风格 */
 :root {
-  /* 主色调：奶油米白/浅灰褐/法式勃艮第红（层次化色调，贴合巴黎浪漫艺术感） */
-  --color-creamwhite: #faf7f2; /* 奶油米白，模拟巴黎老建筑的石材肌理 */
-  --color-taupe: #d9cfc1; /* 浅灰褐（陶土色），呼应巴黎石板路/复古墙面 */
-  --color-burgundy: #7a2734; /* 法式勃艮第红（深浅适中），浪漫又高级 */
-  --color-deepbrown: #423b37; /* 深棕灰，替代纯黑，更显法式复古 */
-  --color-palebeige: #f2eee8; /* 浅米色，用于轻背景，增加层次 */
-  /* 字体：保留衬线+手写体，新增法式优雅斜体 */
+  --color-creamwhite: #faf7f2;
+  --color-taupe: #d9cfc1;
+  --color-burgundy: #7a2734;
+  --color-deepbrown: #423b37;
+  --color-palebeige: #f2eee8;
   --font-serif: 'Noto Serif SC', serif;
-  --font-handwriting: 'Ma Shan Zheng', cursive; /* 手写体注释 */
-  --font-french: 'Cormorant Garamond', serif; /* 法式古典衬线，强化巴黎艺术感 */
+  --font-handwriting: 'Ma Shan Zheng', cursive;
+  --font-french: 'Cormorant Garamond', serif;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: var(--font-serif);
   background-color: var(--color-creamwhite);
   color: var(--color-deepbrown);
-  line-height: 1.85; /* 略宽松行高，贴合法式优雅 */
+  line-height: 1.85;
   letter-spacing: 0.015em;
 }
-
-/* 引入字体（新增Cormorant Garamond法式衬线） */
 @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
 
 .container {
@@ -174,21 +167,19 @@ body {
   margin-bottom: 1.6rem;
   text-align: justify;
   font-weight: 400;
-  font-family: var(--font-french); /* 法式字体提升文本质感 */
+  font-family: var(--font-french);
 }
 
 .content-image img {
   width: 100%;
   height: 520px;
   object-fit: cover;
-  box-shadow: 9px 9px 0 var(--color-taupe); /* 浅灰褐阴影，贴合巴黎石板路色调 */
+  box-shadow: 9px 9px 0 var(--color-taupe);
   transition: all 0.5s ease;
 }
-
-/* 图片hover胶片质感（法式复古滤镜，更柔和） */
 .content-image img:hover,
 .attraction-card img:hover {
-  filter: sepia(35%) contrast(103%) brightness(98%) saturate(105%) hue-rotate(2deg); /* 微暖色调，贴合巴黎浪漫感 */
+  filter: sepia(35%) contrast(103%) brightness(98%) saturate(105%) hue-rotate(2deg);
   transform: scale(1.02);
 }
 
@@ -197,9 +188,8 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.2rem;
-  grid-template-columns: 1fr 1.15fr 1fr; /* 不对称网格，中间卡片略宽 */
+  grid-template-columns: 1fr 1.15fr 1fr;
 }
-
 .feature-card {
   background-color: white;
   padding: 3.2rem 2.2rem;
@@ -208,25 +198,21 @@ body {
   box-shadow: 0 6px 12px rgba(0,0,0,0.04); /* 柔和阴影，贴合法式浪漫 */
   transition: all 0.3s ease;
 }
-
 .feature-card:hover {
   transform: translateY(-9px); /* 轻盈上浮，更显浪漫 */
   box-shadow: 0 9px 18px rgba(0,0,0,0.09);
 }
-
 .feature-icon {
   font-size: 2.7rem;
   color: var(--color-burgundy);
   margin-bottom: 1.6rem;
 }
-
 .feature-card h3 {
   font-size: 1.6rem;
   margin-bottom: 1.1rem;
   color: var(--color-deepbrown);
   font-family: var(--font-french);
 }
-
 .feature-card h3 small {
   font-size: 1rem;
   color: var(--color-burgundy);
@@ -297,7 +283,7 @@ body {
 
 /* 巴黎景点手写体注释（法式浪漫风格） */
 #attractions::after {
-  content: "Paris | 埃菲尔铁塔下的浪漫";
+  content: "Paris | Romance Beneath the Eiffel Tower";
   font-family: var(--font-handwriting);
   font-size: 1.6rem;
   color: var(--color-burgundy);

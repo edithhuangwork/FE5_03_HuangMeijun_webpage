@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Home - PathPals</title>
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-flex">
+        <div class="logo-section">
+        <img src="./assets/logo_icon.png" alt="PathPals Logo" class="logo-icon">
+        <span class="logo-text">PathPals</span>
+        </div>
+        <div class="main-menu">
+            <ul class="main-menu-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="./pages/kyoto.html">Kyoto</a></li>
+            <li><a href="./pages/paris.html">Paris</a></li>
+            <li><a href="./pages/milan.html">Milan</a></li>
+            <li><a href="./pages/cairo.html">Cairo</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu">
+            <div class="mobile-menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="mobile-menu-items">
+                <ul class="mobile-menu-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Kyoto</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Milan</a></li>
+                <li><a href="#">Cairo</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== 主要內容開始 (Main Content Starts) ===== -->
+<main>
+    <!-- 1. Hero Section - The first impression of the website -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Explore the World, Start Here</h1>
+            <p class="hero-subtitle">PathPals plans unique journeys for you to experience the true pulse of every city.</p>
+            <a href="#featured-tours" class="btn btn-primary">View Popular Tours</a>
+        </div>
+    </header>
+
+    <!-- 2. About/Features Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose PathPals?</h2>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <i class="fa-solid fa-map-marked-alt feature-icon"></i>
+                    <h3>Led by Local Experts</h3>
+                    <p>Deeply experience the local culture and discover hidden gems not found in guidebooks.</p>
+                </article>
+                <article class="feature-card">
+                    <i class="fa-solid fa-route feature-icon"></i>
+                    <h3>Customized Itineraries</h3>
+                    <p>We tailor the perfect journey for you based on your interests and budget.</p>
+                </article>
+                <article class="feature-card">
+                    <i class="fa-solid fa-headset feature-icon"></i>
+                    <h3>24/7 Online Support</h3>
+                    <p>Our professional team is always here for you if you encounter any issues during your trip.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Featured Tours Section -->
+    <section id="featured-tours" class="tours-section">
+        <div class="container">
+            <h2 class="section-title">Popular Travel Destinations</h2>
+            <div class="tours-grid">
+                <!-- Each destination is an article -->
+                <article class="tour-card">
+                    <img src="./assets/kyoto.jpg" alt="An old, charming street in Kyoto">
+                    <div class="tour-info">
+                        <h3>Kyoto</h3>
+                        <p>Wander through ancient temples and shrines, and feel the tranquility and charm of the thousand-year-old capital.</p>
+                        <a href="/kyoto-tours" class="btn btn-secondary">Explore Kyoto</a>
+                    </div>
+                </article>
+                <article class="tour-card">
+                    <img src="./assets/paris.jpg" alt="Eiffel Tower in Paris at night">
+                    <div class="tour-info">
+                        <h3>Paris</h3>
+                        <p>Savor the perfect blend of art, fashion, and cuisine on the street corners of the romantic capital.</p>
+                        <a href="/paris-tours" class="btn btn-secondary">Explore Paris</a>
+                    </div>
+                </article>
+                <article class="tour-card">
+                    <img src="./assets/cairo.jpg" alt="Pyramids and a camel in Cairo, Egypt">
+                    <div class="tour-info">
+                        <h3>Cairo</h3>
+                        <p>Embark on a journey to explore ancient Egyptian civilization and witness the majesty of the pyramids firsthand.</p>
+                        <a href="/cairo-tours" class="btn btn-secondary">Explore Cairo</a>
+                    </div>
+                </article>
+                <!-- You can continue to add cards for Milan, etc., based on your navbar links -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Hear From Our Travelers</h2>
+            <div class="testimonial-card">
+                <blockquote>
+                    "This was the best trip I've ever had! The local guide from PathPals took us to so many secret spots. It completely exceeded my expectations!"
+                </blockquote>
+                <cite>- John Smith, from New York</cite>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- ===== 主要內容結束 (Main Content Ends) ===== -->
+
+<!-- 你現有的頁腳 (Footer) -->
+<footer id="contact">
+    <h3>✉️ Contact Us ✉️</h3>
+    <div class="footer-content">
+        <div class="contact location">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29529.12146266155!2d114.1876244544983!3d22.310537521167635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404014542b5470d%3A0x9de9bdb1d1f69cf6!2sHong%20Kong%20Institute%20of%20Technology-Kwun%20Tong%20Campus!5e0!3m2!1sen!2shk!4v1773203071383!5m2!1sen!2shk" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contact info">
+            <header>Enquiry</header>
+            <p class="info-tel">+852 2926 1222</p>
+            <p class="info-fax">+852 2713 7018</p>
+            <p class="info-email"><a href="mailto:enquiry@hkct.edu.hk">enquiry@hkct.edu.hk</a></p>
+            <p class="info-msg"><a href="https://api.whatsapp.com/send?phone=85263004855">+852 6300 4855</a></p>
+        </div>
+        <div class="contact form">
+            <form id="contact-form">
+        <div class="form-group details">
+            <label for="name">Name</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="Enter your name" 
+                minlength="5" 
+                maxlength="25"
+                required
+            />
+        </div>
+        <div class="form-group details">
+            <label for="email">Email</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Enter your email"
+                required
+            />
+        </div>
+        <div class="form-group details">
+            <label for="message">Message</label>
+            <textarea
+                name="message" 
+                id="message" 
+                placeholder="Enter your message" 
+                rows="4"
+                cols="40"
+                style="resize:none"
+                required
+            ></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Send Message</button>
+        </div>
+            </form>
+        </div>
+    </div> 
+    <p>© Copyright <span id="copyright-year"></span> PathPals Limited. All rights reserved</p>
+</footer>
+<script src="./js/index.js"></script>
+</body>
+</html>
+
+
+
+<!-- 📱 首頁 (Home)
+├── 網站標題 + 英雄圖（4地點輪播）
+├── 導覽列（首頁|關於|京都|巴黎|里約|開普敦|聯絡）
+└── 4個地點預覽卡片（圖片+名稱）
+
+📜 關於我們 (About)
+├── 網站介紹 + 創作者故事
+├── 旅遊貼士 + 設計理念
+└── 影片：為什麼愛旅行？
+
+✉️ 聯絡我們 (Contact)
+├── 聯絡表單（姓名、Email、訊息）
+├── 社群連結 + QR Code
+└── 地圖：香港出發交通樞紐 -->

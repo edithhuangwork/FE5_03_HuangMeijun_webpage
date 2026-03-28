@@ -95,7 +95,7 @@ body {
 
 /* 手写体注释 + 箭头（米兰主题：时尚×古典） */
 .destination-hero::after {
-  content: "Milano | 古典与时尚的交织";
+  content: "Milano | Where Classic Meets Contemporary Fashion";
   font-family: var(--font-handwriting);
   font-size: 1.5rem;
   color: var(--color-italianred);
@@ -285,7 +285,7 @@ body {
 
 /* 米兰景点手写体注释（意式风格） */
 #attractions::after {
-  content: "Milano | 时尚之都的经典地标";
+  content: "Milano | Iconic Landmarks of the Fashion Capital";
   font-family: var(--font-handwriting);
   font-size: 1.5rem;
   color: var(--color-italianred);

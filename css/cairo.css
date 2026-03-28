@@ -97,7 +97,7 @@ body {
 
 /* 手写体注释 + 箭头（开罗主题：法老王传奇×尼罗河畔） */
 .destination-hero::after {
-  content: "Cairo | 尼罗河畔的法老王传奇";
+  content: "Cairo | Legends of Pharaohs by the Nile";
   font-family: var(--font-handwriting);
   font-size: 1.6rem;
   color: var(--color-egyptianred);
@@ -288,7 +288,7 @@ body {
 
 /* 开罗景点手写体注释（古埃及传奇风格） */
 #attractions::after {
-  content: "Cairo | 吉萨金字塔的千年神秘";
+  content: "Cairo | Millennia of Mystery at Giza Pyramids";
   font-family: var(--font-handwriting);
   font-size: 1.6rem;
   color: var(--color-egyptianred);
