@@ -22,7 +22,6 @@ body {
   width: 90%; 
   max-width: var(--container-max);
 }
-
 .hero-section {
   width: 100vw;
   height: 90vh;
@@ -64,6 +63,7 @@ body {
   text-align: center;
 }
 .section-title {
+  padding-top: 4rem;
   font-size: 2.25rem; 
   font-weight: 600; 
   margin-bottom: 2.5rem; 
@@ -101,7 +101,7 @@ body {
   box-shadow:0 6px 14px rgba(0,0,0,0.05); 
   transition:all 0.25s ease;
   h3 {
-    justify-content: center;
+    text-align: center;
     font-size: 2rem;
     margin-bottom:0.75rem; 
     color:var(--color-darkgray); 
@@ -143,10 +143,11 @@ body {
     box-shadow: 10px 10px 0 var(--color-warmgray);
     z-index: 10;
   }
-  img {
-    width: 300px;
-    height: 225px;
-    border-radius: 1.5rem;
+  .tour-card-img {
+    min-width: 300px;
+    img {
+      width: 100%;
+    }
   }
   a {
   font-size: 1.5rem;
@@ -174,7 +175,10 @@ body {
   }
   }
   p {
-    height: 6rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    height: 10rem;
   }
 }
 .card-1::before {
@@ -330,23 +334,82 @@ body {
 }
 
 @media (max-width:1200px) {
+  .hero-section {
+    h1 {
+      font-size: 3.5rem;
+    };
+    p {
+      font-size: 1.75rem;
+      padding-bottom: 3rem;
+    };
+    a {
+      font-size: 1.5rem;
+    }
+  }
   .features-grid { 
-    grid-template-columns:1fr; 
+    grid-template-columns: repeat(2, 1fr); 
     gap:2.5rem; 
+  }
+  .tours-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width:768px) {
-  .main-menu { 
-    display:none; 
+    .hero-section {
+    h1 {
+      font-size: 3rem;
+    };
+    p {
+      font-size: 1.5rem;
+      padding-bottom: 2rem;
+    };
+    a {
+      font-size: 1rem;
+    }
   }
-  .mobile-menu { 
-    display:block; 
+  .features-grid { 
+    grid-template-columns: 1fr; 
+    gap:2.5rem; 
+  }
+  .tours-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   .comment-card {
     flex: 0 0 320px;
     blockquote {
       font-size: 1.15rem;
       padding: 1.5rem 1.5rem 1.5rem 3.5rem;
+    }
+  }
+}
+@media (max-width:400px) {
+  .about-section {
+    h2 {
+    font-size: 2rem;
+    }
+    .features-grid .feature-card {
+      h3 {
+        font-size: 1.25rem;
+      }
+      p {
+        font-size: 1.15rem;
+      }
+    }
+  }
+  .tours-section {
+    h2 {
+      font-size: 1.95rem;
+    }
+    p {
+      font-size: 1.15rem;
+    }
+    .tours-grid {
+    grid-template-columns: 1fr;
+    }
+  }
+  .comments-section {
+    h2 {
+      font-size: 2.25rem;
     }
   }
 }

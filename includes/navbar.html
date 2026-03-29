@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <title>Navbar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <title>Navbar</title>
 </head>
 <body>
   <nav class="navbar" role="navigation" aria-label="Primary">
     <div class="navbar-flex">
     <div class="logo-section">
-        <img
-        src="./assets/logo_icon.png"
-        alt="PathPals Logo"
-        class="logo-icon"
-        />
-        <span class="logo-text">PathPals</span>
+      <div class="logo-icon">
+        <img src="../assets/logo.png" alt="PathPals Logo" />
+      </div>
+      <span class="logo-text">PathPals</span>
     </div>
     <div class="main-menu" id="main-menu">
-        <ul class="main-menu-list">
+      <ul class="main-menu-list">
         <li><a href="../pages/index.html">Home</a></li>
         <li><a href="../pages/index.html#about">About</a></li>
         <li><a href="../pages/kyoto.html">Kyoto</a></li>
@@ -26,50 +24,26 @@
         <li><a href="../pages/milan.html">Milan</a></li>
         <li><a href="../pages/cairo.html">Cairo</a></li>
         <li><a href="../pages/index.html#contact">Contact Us</a></li>
-        </ul>
+      </ul>
     </div>
     <!-- Mobile menu toggle -->
     <div class="mobile-menu" aria-hidden="false">
-        <button
-        class="mobile-menu-toggle"
-        id="mobile-menu-toggle"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="mobile-panel"
-        >
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-        </button>
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel" >
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
     </div>
     </div>
-    <div
-    class="mobile-overlay"
-    id="mobile-overlay"
-    tabindex="-1"
-    aria-hidden="true" >
+    <div class="mobile-overlay" id="mobile-overlay" tabindex="-1" aria-hidden="true" >
     </div>
-    <div
-    class="mobile-panel"
-    id="mobile-panel"
-    role="dialog"
-    aria-modal="true"
-    aria-hidden="true" >
+    <div class="mobile-panel" id="mobile-panel" role="dialog" aria-modal="true" aria-hidden="true" >
     <div class="mobile-panel-header">
-        <div style="display: flex; align-items: center; gap: 0.5rem">
-        <img
-            src="./assets/logo_icon.png"
-            alt=""
-            class="logo-icon"
-            style="width: 40px; height: 40px"
-        />
+      <div class="mobile-panel-logo-wrap">
+        <img src="../assets/logo.png" alt="PathPals Logo" class="logo-icon" />
         <span class="logo-text">PathPals</span>
-        </div>
-        <button
-        class="mobile-close"
-        id="mobile-close"
-        aria-label="Close menu"
-        >
+      </div>
+      <button class="mobile-close" id="mobile-close" aria-label="Close menu">
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
+      </button>
     </div>
     <nav class="mobile-panel-body" aria-label="Mobile menu">
         <ul class="mobile-menu-list" id="mobile-menu-list">
@@ -79,7 +53,7 @@
         <li><a href="../pages/paris.html">Paris</a></li>
         <li><a href="../pages/milan.html">Milan</a></li>
         <li><a href="../pages/cairo.html">Cairo</a></li>
-        <li><a href="../pages/index.html#conact">Contact Us</a></li>
+        <li><a href="../pages/index.html#contact">Contact Us</a></li>
         </ul>
     </nav>
     </div>
