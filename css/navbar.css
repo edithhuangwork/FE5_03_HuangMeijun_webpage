@@ -5,8 +5,6 @@
   --color-darkgray: #4a4845;
   --color-lightgray: #f0eeea;
   --font-family: "Aubrey", system-ui;
-  --font-handwriting: 'Ma Shan Zheng', cursive;
-  --container-max: 1400px;
 }
 * { 
   box-sizing: border-box; 

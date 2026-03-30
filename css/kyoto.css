@@ -4,8 +4,8 @@
   --color-deepred: #9c2018;
   --color-darkgray: #4a4845;
   --color-lightgray: #f0eeea;
-  --font-serif: 'Noto Serif SC', serif;
-  --font-handwriting: 'Ma Shan Zheng', cursive;
+  --font-serif: 'Aubrey', system-ui;
+  --font-handwriting: 'Yuji Mai', serif;
 }
 * {
   margin: 0;
@@ -19,26 +19,24 @@ body {
   line-height: 1.8;
   letter-spacing: 0.02em;
 }
-@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&display=swap');
-
 .container {
-  width: 90%;
-  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   padding: 4rem 0;
 }
 
+/* 1. Hero Banner */
 .destination-hero {
-  height: 80vh;
-  background: linear-gradient(rgba(248, 245, 240, 0.8), rgba(248, 245, 240, 0.6)), 
-              url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070') center/cover no-repeat;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(248, 245, 240, 0.8), rgba(248, 245, 240, 0.6)), url('../assets/hero-kyoto.avif') center/cover no-repeat;
   display: flex;
   align-items: center;
   position: relative;
   margin-bottom: 3rem;
 }
 .kyoto-hero .container {
-  padding: 0;
+  padding: 0 3rem;
   position: relative;
 }
 .destination-title {
@@ -48,15 +46,16 @@ body {
   line-height: 1.2;
   margin-bottom: 1rem;
   position: relative;
-}
-.destination-title small {
-  font-size: 2rem;
-  color: var(--color-darkgray);
-  writing-mode: vertical-rl;
-  position: absolute;
-  right: -80px;
-  top: 0;
-  letter-spacing: 0.5em;
+  small {
+    font-size: 2rem;
+    font-family: var(--font-handwriting);
+    color: var(--color-darkgray);
+    writing-mode: vertical-rl;
+    position: absolute;
+    right: 80px;
+    top: 0;
+    letter-spacing: 0.5em;
+  }
 }
 .destination-subtitle {
   font-size: 1.2rem;
@@ -76,7 +75,7 @@ body {
   transform: rotate(-5deg);
 }
 .destination-hero::before {
-  content: "→";
+  content: "";
   font-size: 2rem;
   color: var(--color-deepred);
   position: absolute;
@@ -87,6 +86,9 @@ body {
 .destination-section {
   margin-bottom: 8rem;
   position: relative;
+  .container {
+    padding: 0 3rem;
+  }
 }
 .section-title {
   font-size: 3rem;
@@ -95,20 +97,21 @@ body {
   color: var(--color-darkgray);
   position: relative;
   display: inline-block;
-}
-.section-title::after {
-  content: "";
-  width: 100px;
-  height: 3px;
-  background-color: var(--color-deepred);
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-}
-.section-title small {
-  font-size: 1rem;
-  color: var(--color-deepred);
-  margin-left: 1rem;
+  &::after {
+    content: ""; 
+    width: 105%; 
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--color-deepred), transparent); 
+    position: absolute; 
+    bottom: 10px; 
+    left: 0;
+  }
+  small {
+    font-family: var(--font-handwriting);
+    font-size: 1rem;
+    color: var(--color-deepred);
+    margin-left: 1rem;
+  }
 }
 .section-light-bg {
   background-color: var(--color-lightgray);
@@ -116,15 +119,15 @@ body {
   padding: 3rem 0;
 }
 
-/* 3. History Section */
+/* 2. History Section */
 .section-content-split {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: center;
+  align-items: start;
 }
 .content-text p {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
   text-align: justify;
 }
@@ -134,48 +137,59 @@ body {
   object-fit: cover;
   box-shadow: 10px 10px 0 var(--color-warmgray);
   transition: all 0.5s ease;
+  filter: sepia(60%) contrast(110%) brightness(90%);
 }
 .content-image img:hover,
 .attraction-card img:hover {
-  filter: sepia(60%) contrast(110%) brightness(90%);
   transform: scale(1.02);
+  filter: none;
 }
 
-/* 4. Culture Section */
+/* 3. Culture Section */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  grid-template-columns: 1fr 1.1fr 1fr;
+  .card-1, .card-2, .card-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    height: 4rem;
+    color: var(--color-deepred);
+    padding-bottom: 0.5rem;
+    img {
+      height: 100%;
+    }
+    small {
+      font-family: var(--font-handwriting);
+      font-size: 1rem;
+    }
+  }
 }
 .feature-card {
   background-color: white;
-  padding: 3rem 2rem;
+  padding: 2.25rem 1.5rem;
   border-radius: 0;
   border-top: 3px solid var(--color-deepred);
   box-shadow: 0 5px 10px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
-}
-.feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  p {
+    font-size: 1.15rem;
+  }
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
 }
 .feature-icon {
   font-size: 2.5rem;
-  color: var(--color-deepred);
+  color: var(--color-darkgray);
   margin-bottom: 1.5rem;
 }
-.feature-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--color-darkgray);
-}
-.feature-card h3 small {
-  font-size: 0.8rem;
-  color: var(--color-deepred);
-}
 
-/* 5. Attractions Section */
+/* 4. Attractions Section */
 .attractions-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -189,48 +203,44 @@ body {
   background-color: white;
   overflow: hidden;
   position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    filter: sepia(60%) contrast(110%) brightness(90%);
+  }
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    transform: translateY(30%);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  &:hover figcaption {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-offwhite);
+    small {
+      font-family: var(--font-handwriting);
+      font-size: 1rem;
+      color: var(--color-warmgray);
+    }
+  }
+  p {
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
 }
-.attraction-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: all 0.5s ease;
-}
-.attraction-card figcaption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2rem;
-  background: linear-gradient(transparent, rgba(0,0,0,0.7));
-  color: white;
-  transform: translateY(30%);
-  opacity: 0;
-  transition: all 0.5s ease;
-}
-
-.attraction-card:hover figcaption {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.attraction-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: var(--color-offwhite);
-}
-
-.attraction-card h3 small {
-  font-size: 1rem;
-  color: var(--color-warmgray);
-}
-
-.attraction-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* 手写体注释（景点区装饰） */
 #attractions::after {
   content: "京都名所 | 一生に一度は訪れたい場所";
   font-family: var(--font-handwriting);
@@ -243,32 +253,34 @@ body {
   z-index: 1;
 }
 
-/* 6. 响应式适配（保持日系风格） */
 @media (max-width: 1200px) {
   .destination-title {
-    font-size: 4.5rem;
+    font-size: 3.75rem;
+  }
+  .content-text p {
+    font-size: 1.25rem;
   }
   .features-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
   }
   .attractions-grid {
-    grid-template-columns: 1fr;
-  }
-  .attractions-grid .attraction-card:first-child {
-    grid-row: auto;
+    grid-template-columns: 1fr 1fr;
+    .attraction-card:first-child {
+      grid-row: auto;
+    }
   }
 }
 
 @media (max-width: 768px) {
   .destination-title {
     font-size: 3rem;
-  }
-  .destination-title small {
-    writing-mode: horizontal-tb;
-    position: static;
-    display: block;
-    margin-top: 1rem;
+    small {
+      writing-mode: horizontal-tb;
+      position: static;
+      display: block;
+      margin-top: 1rem;
+    }
   }
   .section-content-split {
     grid-template-columns: 1fr;
@@ -279,5 +291,47 @@ body {
   .destination-hero::after,
   .destination-hero::before {
     display: none;
+  }
+  .features-grid {
+    gap: 2rem
+    .card-1, .card-2, .card-3 {
+      gap: 0.75rem;
+      font-size: 1.25rem;
+      padding-bottom: 0.5rem;
+      small {
+        font-family: var(--font-handwriting);
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  .section-title {
+    position: relative;
+    font-size: 1.45rem;
+    margin-bottom: 2.5rem;
+    padding: 1rem;
+      small {
+      position: absolute;
+      top: 0.2rem;
+      right: 0; 
+      font-size: 1rem;
+      opacity: 0.85;
+      color: var(--color-deepred);
+    }
+  }
+  .destination-section {
+    .container {
+      padding: 0 1.25rem;
+    }
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .attractions-grid {
+    grid-template-columns: 1fr;
+  }
+  #attractions::after {
+  font-size: 1rem;
   }
 }

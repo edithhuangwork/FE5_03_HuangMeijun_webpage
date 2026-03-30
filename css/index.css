@@ -6,7 +6,6 @@
   --color-lightgray: #f0eeea;
   --font-family: "Aubrey", system-ui;
   --font-handwriting: 'Ma Shan Zheng', cursive;
-  --container-max: 1400px;
 }
 * { 
   box-sizing: border-box; 
@@ -22,10 +21,14 @@ body {
   width: 90%; 
   max-width: var(--container-max);
 }
+img {
+  filter: sepia(30%) contrast(105%) brightness(90%) hue-rotate(-5deg);
+}
 .hero-section {
   width: 100vw;
   height: 90vh;
   background: url("../assets/hero.webp") center/cover no-repeat;
+  filter: sepia(30%) contrast(105%) brightness(90%) hue-rotate(-5deg);
   background-attachment: fixed;
   display: flex;
   align-items: center;
@@ -181,7 +184,7 @@ body {
     height: 10rem;
   }
 }
-.card-1::before {
+.card-1::after {
   content: "Kyoto";
   position: absolute;
   top: 1rem;
@@ -196,7 +199,7 @@ body {
   box-shadow: 2px 2px 0 var(--color-warmgray);
   font-family: var(--font-family);
 }
-.card-2::before {
+.card-2::after {
   content: "Paris";
   position: absolute;
   top: 1rem;
@@ -211,7 +214,7 @@ body {
   box-shadow: 2px 2px 0 var(--color-warmgray);
   font-family: var(--font-family);
 }
-.card-3::before {
+.card-3::after {
   content: "Milan";
   position: absolute;
   top: 1rem;
@@ -226,7 +229,7 @@ body {
   box-shadow: 2px 2px 0 var(--color-warmgray);
   font-family: var(--font-family);
 }
-.card-4::before {
+.card-4::after {
   content: "Cairo";
   position: absolute;
   top: 1rem;

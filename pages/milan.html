@@ -1,126 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore Milan - PathPals</title>
-    <link rel="stylesheet" href="../css/milan.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Milan - PathPals</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aubrey&family=Playwrite+FR+Trad:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/milan.css">
 </head>
 <body>
 <!-- Navbar -->
 <div id="navbar-placeholder"></div>
 <!-- Main -->
 <main class="destination-page">
-    <!-- 1. Hero Banner -->
-    <header class="destination-hero milan-hero">
-        <div class="container">
-            <h1 class="destination-title">🏛️ Milan, Italy <small>(Milano)</small></h1>
-            <p class="destination-subtitle">The capital of fashion and culture in Northern Italy, where ancient history meets modern vitality.</p>
-        </div>
-    </header>
-    
-    <!-- 2. History Section -->
-    <section id="history" class="destination-section">
-        <div class="container">
-            <h2 class="section-title">History: From Mediolanum to a Modern Metropolis</h2>
-            <div class="section-content-split">
-                <div class="content-text">
-                    <p>Founded around 600 BC by Celtic tribes, Milan later became the important Roman city of Mediolanum. After being destroyed by Frederick I in the Middle Ages, the Milanese formed the Lombard League to fight back and win their independence, eventually becoming a duchy. Ruled by the Visconti family from the 14th century, Milan was established as a center for finance and trade. It flourished during the Renaissance, when Leonardo da Vinci painted "The Last Supper" here. In the 19th century, it became a pivotal hub for the Italian unification movement.</p>
-                </div>
-                <div class="content-image">
-                    <img src="https://images.unsplash.com/photo-1589884820928-a274a4577234?q=80&w=2070" alt="The grand architecture of the Galleria Vittorio Emanuele II in Milan">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Culture Section -->
-    <section id="culture" class="destination-section section-light-bg">
-        <div class="container">
-            <h2 class="section-title">Culture: Fashion, Aperitivo, and the Arts</h2>
-            <div class="features-grid">
-                <article class="feature-card">
-                    <i class="fas fa-tshirt feature-icon"></i>
-                    <h3>Fashion Capital</h3>
-                    <p>As a global fashion capital, Milan hosts the famous Milan Fashion Week, setting trends for the entire world.</p>
-                </article>
-                <article class="feature-card">
-                    <i class="fas fa-cocktail feature-icon"></i>
-                    <h3>Aperitivo Hour</h3>
-                    <p>A cherished local tradition from 6-8 PM, where bars offer rich buffets with drinks, blending social life with dining.</p>
-                </article>
-                <article class="feature-card">
-                    <i class="fas fa-theater-masks feature-icon"></i>
-                    <h3>Opera and Arts</h3>
-                    <p>Home to world-renowned authors like Alessandro Manzoni and the legendary La Scala Opera House, Milan has a rich artistic soul.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Attractions Section -->
-    <section id="attractions" class="destination-section">
-        <div class="container">
-            <h2 class="section-title">Must-Visit Landmarks</h2>
-            <div class="attractions-grid">
-                <figure class="attraction-card">
-                    <img src="https://images.unsplash.com/photo-1525834392229-b47015a89a51?q=80&w=1974" alt="The magnificent facade of the Milan Cathedral">
-                    <figcaption>
-                        <h3>Milan Cathedral <small>(Duomo di Milano)</small></h3>
-                        <p>A breathtaking example of Gothic architecture. Climb to the top of its spires for a panoramic view of the city.</p>
-                    </figcaption>
-                </figure>
-                <figure class="attraction-card">
-                    <img src="https://images.unsplash.com/photo-1619261114940-b8cb53a589d3?q=80&w=1964" alt="The luxurious interior of the Galleria Vittorio Emanuele II">
-                    <figcaption>
-                        <h3>Vittorio Emanuele II Gallery <small>(Galleria)</small></h3>
-                        <p>Adjacent to the Duomo, this is one of the world's oldest and most luxurious shopping arcades, a masterpiece of 19th-century design.</p>
-                    </figcaption>
-                </figure>
-                <figure class="attraction-card">
-                    <img src="https://images.unsplash.com/photo-1628815584122-773b003995d3?q=80&w=2070" alt="The main tower of Sforza Castle against a blue sky">
-                    <figcaption>
-                        <h3>Sforza Castle <small>(Castello Sforzesco)</small></h3>
-                        <p>A grand medieval fortress that now houses several civic museums and art collections, including works by Michelangelo.</p>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Practical Info Section -->
-    <section id="practical-info" class="destination-section section-light-bg">
-        <div class="container">
-            <h2 class="section-title">Practical Travel Information</h2>
-            <ul class="info-list">
-                <li><strong><i class="fas fa-subway"></i> Getting Around:</strong> The easiest way to navigate the city is via the Metro (5 lines, 5:30 AM to midnight), trams, or buses. The MilanoCard offers unlimited rides.</li>
-                <li><strong><i class="fas fa-train"></i> Main Station:</strong> Milan Central Station <small>(Milano Centrale)</small> is the main railway hub. The Malpensa Express train connects the airport to the city in about 50 minutes.</li>
-                <li><strong><i class="fas fa-utensils"></i> Local Cuisine:</strong> Be sure to try the creamy Saffron Risotto <small>(risotto alla Milanese)</small> and the tender braised veal shank <small>(ossobuco)</small>.</li>
-                <li><strong><i class="fas fa-bed"></i> Accommodation:</strong> For convenience, choose lodging near the city center around the Duomo.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- 6. Video Section -->
-    <section id="video" class="destination-section">
-        <div class="container">
-            <h2 class="section-title">Video: Milan Travel Vlog</h2>
-            <div class="video-container">
-                <!-- Embedded video covering attractions, food, and transport -->
-                <iframe 
-                    width="560" 
-                    height="315" 
-                    src="https://www.youtube.com/embed/WzrfIlIX-pQ" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    </section>
-
+<!-- 1. Hero Banner -->
+<header class="destination-hero milan-hero">
+  <div class="container">
+    <h1 class="destination-title">🏛️ Milan, Italy <small>(Milano)</small></h1>
+    <p class="destination-subtitle">The capital of fashion and culture in Northern Italy, where ancient history meets modern vitality.</p>
+  </div>
+</header>
+<!-- 2. History Section -->
+<section id="history" class="destination-section">
+  <div class="container">
+    <h2 class="section-title">History: From Mediolanum to a Modern Metropolis</h2>
+    <div class="section-content-split">
+      <div class="content-text">
+        <p>Founded around 600 BC by Celtic tribes, Milan later became the important Roman city of Mediolanum. After being destroyed by Frederick I in the Middle Ages, the Milanese formed the Lombard League to fight back and win their independence, eventually becoming a duchy. Ruled by the Visconti family from the 14th century, Milan was established as a center for finance and trade. It flourished during the Renaissance, when Leonardo da Vinci painted "The Last Supper" here. In the 19th century, it became a pivotal hub for the Italian unification movement.</p>
+      </div>
+      <div class="content-image">
+        <img src="../assets/galleria-veii.webp" alt="The grand architecture of the Galleria Vittorio Emanuele II in Milan">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 3. Culture Section -->
+<section id="culture" class="destination-section section-light-bg">
+  <div class="container">
+    <h2 class="section-title">Culture: Fashion, Aperitivo, and the Arts</h2>
+    <div class="features-grid">
+      <article class="feature-card">
+        <h3><i class="fas fa-tshirt feature-icon"></i>Fashion Capital</h3>
+        <p>As a global fashion capital, Milan hosts the famous Milan Fashion Week, setting trends for the entire world.</p>
+      </article>
+      <article class="feature-card">
+        <h3><i class="fas fa-cocktail feature-icon"></i>Aperitivo Hour</h3>
+        <p>A cherished local tradition from 6-8 PM, where bars offer rich buffets with drinks, blending social life with dining.</p>
+      </article>
+      <article class="feature-card">
+        <h3><i class="fas fa-theater-masks feature-icon"></i>Opera and Arts</h3>
+        <p>Home to world-renowned authors like Alessandro Manzoni and the legendary La Scala Opera House, Milan has a rich artistic soul.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- 4. Attractions Section -->
+<section id="attractions" class="destination-section">
+  <div class="container">
+    <h2 class="section-title">Must-Visit Landmarks</h2>
+    <div class="attractions-grid">
+      <figure class="attraction-card">
+        <img src="../assets/mmilan-cathedral.jpg" alt="The magnificent facade of the Milan Cathedral">
+        <figcaption>
+          <h3>Milan Cathedral <small>(Duomo di Milano)</small></h3>
+          <p>A breathtaking example of Gothic architecture. Climb to the top of its spires for a panoramic view of the city.</p>
+        </figcaption>
+      </figure>
+      <figure class="attraction-card">
+        <img src="../assets/Galleria-VEii.jpg" alt="The luxurious interior of the Galleria Vittorio Emanuele II">
+        <figcaption>
+          <h3>Vittorio Emanuele II Gallery <small>(Galleria)</small></h3>
+          <p>Adjacent to the Duomo, this is one of the world's oldest and most luxurious shopping arcades, a masterpiece of 19th-century design.</p>
+        </figcaption>
+      </figure>
+      <figure class="attraction-card">
+        <img src="../assets/Sforza-Castle.webp" alt="The main tower of Sforza Castle against a blue sky">
+        <figcaption>
+          <h3>Sforza Castle <small>(Castello Sforzesco)</small></h3>
+          <p>A grand medieval fortress that now houses several civic museums and art collections, including works by Michelangelo.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<!-- 5. Practical Info Section -->
+<section id="practical-info" class="destination-section section-light-bg">
+  <div class="container">
+    <h2 class="section-title">Practical Travel Information</h2>
+    <ul class="info-list">
+      <li><strong><i class="fas fa-subway"></i> Getting Around:</strong> The easiest way to navigate the city is via the Metro (5 lines, 5:30 AM to midnight), trams, or buses. The MilanoCard offers unlimited rides.</li>
+      <li><strong><i class="fas fa-train"></i> Main Station:</strong> Milan Central Station <small>(Milano Centrale)</small> is the main railway hub. The Malpensa Express train connects the airport to the city in about 50 minutes.</li>
+      <li><strong><i class="fas fa-utensils"></i> Local Cuisine:</strong> Be sure to try the creamy Saffron Risotto <small>(risotto alla Milanese)</small> and the tender braised veal shank <small>(ossobuco)</small>.</li>
+      <li><strong><i class="fas fa-bed"></i> Accommodation:</strong> For convenience, choose lodging near the city center around the Duomo.</li>
+    </ul>
+  </div>
+</section>
+<!-- 6. Video Section -->
+<section id="video" class="destination-section">
+  <div class="container">
+    <h2 class="section-title">Video: Milan Travel Vlog</h2>
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/xgFInCmXrPw?si=jyg7VrcU1klkikrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
 </main>
 <!-- Footer -->
 <div id="footer-placeholder"></div>
