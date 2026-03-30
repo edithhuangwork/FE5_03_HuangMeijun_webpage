@@ -1,7 +1,7 @@
-// js/navbar-footer.js
 (function () {
   function detectBasePath() {
-    const path = window.location.pathname; // e.g. "/pages/kyoto.html"
+    // if current page is /pages/xxx.html then we are in a subfolder
+    const path = window.location.pathname;
     if (path.includes("/pages/")) return "../";
     return "./";
   }
@@ -16,32 +16,45 @@
     el.innerHTML = html;
   }
 
+  function setNavLinks(base) {
+    const home = document.querySelector('[data-nav="home"]');
+    const about = document.querySelector('[data-nav="about"]');
+    const contact = document.querySelector('[data-nav="contact"]');
+
+    if (home) home.href = `${base}index.html`;
+    if (about) about.href = `${base}index.html#about`;
+
+    // ✅ contact 是 footer 裡，所以也指向根頁面的 #contact
+    if (contact) contact.href = `${base}index.html#contact`;
+  }
+
+  function scrollToHashAfterFooter() {
+    const hash = window.location.hash; // "#contact" or "#about" etc
+    if (!hash) return;
+
+    // footer 是後插入的，所以用 timeout 再找一次
+    const id = hash.slice(1);
+    setTimeout(() => {
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: "auto", block: "start" });
+    }, 0);
+  }
+
   async function init() {
     const base = detectBasePath();
 
     await loadInclude(`${base}includes/navbar.html`, "navbar-placeholder");
+    setNavLinks(base);
+
     await loadInclude(`${base}includes/footer.html`, "footer-placeholder");
+    scrollToHashAfterFooter();
 
-    const hash = window.location.hash;
-    if (hash) {
-      // 等 footer 插入完成後再滾動/定位
-      setTimeout(() => {
-        const target = document.getElementById(hash.slice(1));
-        if (target) target.scrollIntoView({ behavior: "auto", block: "start" });
-      }, 0);
-    }
-
-    // ✅ 載入完成後初始化 navbar（包含下拉/行動選單）
-    // 避免重複初始化：用 data attribute 當旗標
-    if (!document.body.dataset.navbarInitialized) {
-      document.body.dataset.navbarInitialized = "true";
-      if (typeof window.initNavbar === "function") window.initNavbar();
-    }
+    if (typeof window.initNavbar === "function") window.initNavbar();
   }
 
   document.addEventListener("DOMContentLoaded", init);
 })();
- 
+
 // ====== 你的原本 navbar 初始化邏輯（保持不變，只做「可被呼叫」）======
 window.initNavbar = function initNavbar() {
   const toggleBtn = document.getElementById("mobile-menu-toggle");
