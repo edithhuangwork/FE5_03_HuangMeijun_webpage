@@ -1,25 +1,49 @@
-document.addEventListener("DOMContentLoaded", async function () {
-  const loadComponent = async (file, elementId) => {
-    try {
-      const response = await fetch(file);
-      if (!response.ok) {
-        throw new Error(`載入失敗：${file} (${response.status})`);
-      }
-      const html = await response.text();
-      const el = document.getElementById(elementId);
-      if (el) el.innerHTML = html;
-    } catch (err) {
-      console.error(`fetch ${file} 時出錯：`, err);
+// js/navbar-footer.js
+(function () {
+  function detectBasePath() {
+    const path = window.location.pathname; // e.g. "/pages/kyoto.html"
+    if (path.includes("/pages/")) return "../";
+    return "./";
+  }
+
+  async function loadInclude(url, elementId) {
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
+    const html = await res.text();
+
+    const el = document.getElementById(elementId);
+    if (!el) throw new Error(`Element #${elementId} not found`);
+    el.innerHTML = html;
+  }
+
+  async function init() {
+    const base = detectBasePath();
+
+    await loadInclude(`${base}includes/navbar.html`, "navbar-placeholder");
+    await loadInclude(`${base}includes/footer.html`, "footer-placeholder");
+
+    const hash = window.location.hash;
+    if (hash) {
+      // 等 footer 插入完成後再滾動/定位
+      setTimeout(() => {
+        const target = document.getElementById(hash.slice(1));
+        if (target) target.scrollIntoView({ behavior: "auto", block: "start" });
+      }, 0);
     }
-  };
 
-  await loadComponent("../includes/navbar.html", "navbar-placeholder");
-  await loadComponent("../includes/footer.html", "footer-placeholder");
+    // ✅ 載入完成後初始化 navbar（包含下拉/行動選單）
+    // 避免重複初始化：用 data attribute 當旗標
+    if (!document.body.dataset.navbarInitialized) {
+      document.body.dataset.navbarInitialized = "true";
+      if (typeof window.initNavbar === "function") window.initNavbar();
+    }
+  }
 
-  initNavbar();
-});
-
-function initNavbar() {
+  document.addEventListener("DOMContentLoaded", init);
+})();
+ 
+// ====== 你的原本 navbar 初始化邏輯（保持不變，只做「可被呼叫」）======
+window.initNavbar = function initNavbar() {
   const toggleBtn = document.getElementById("mobile-menu-toggle");
   const overlay = document.getElementById("mobile-overlay");
   const panel = document.getElementById("mobile-panel");
@@ -36,6 +60,7 @@ function initNavbar() {
 
   function openPanel() {
     if (isOpen()) return;
+
     lastFocusedElement = document.activeElement;
     panel.classList.add("open");
     overlay.classList.add("open");
@@ -56,12 +81,14 @@ function initNavbar() {
 
   function closePanel() {
     if (!isOpen()) return;
+
     panel.classList.remove("open");
     overlay.classList.remove("open");
     panel.setAttribute("aria-hidden", "true");
     overlay.setAttribute("aria-hidden", "true");
     toggleBtn.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
+
     if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
       lastFocusedElement.focus();
     }
@@ -93,4 +120,4 @@ function initNavbar() {
   mobileMenuList?.addEventListener("click", (ev) => {
     if (ev.target.tagName === "A") closePanel();
   });
-}
+};

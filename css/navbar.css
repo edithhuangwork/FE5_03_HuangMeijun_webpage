@@ -39,7 +39,10 @@ body {
   display:flex; 
   align-items:center; 
   gap: 1rem;
-  padding: 0 2rem;  
+  padding: 0 2rem; 
+  a {
+    text-decoration: none;
+  } 
 }
 .logo-icon { 
   width:56px; 
