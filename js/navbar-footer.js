@@ -6,20 +6,16 @@
     // On GitHub Pages, home might be /<repo>/ (pathname ends with /)
     return "./";
   }
-
   async function loadInclude(url, elementId) {
     console.log("[navbar-footer] fetch ->", url);
-
     const res = await fetch(url, { cache: "no-store" });
     if (!res.ok) {
       console.error("[navbar-footer] 404/failed ->", url, res.status);
       throw new Error(`Failed to load ${url}: ${res.status}`);
     }
-
     const html = await res.text();
     const el = document.getElementById(elementId);
     if (!el) throw new Error(`Element #${elementId} not found`);
-
     el.innerHTML = html;
   }
 
@@ -27,7 +23,6 @@
     const home = document.querySelector('[data-nav="home"]');
     const about = document.querySelector('[data-nav="about"]');
     const contact = document.querySelector('[data-nav="contact"]');
-
     if (home) home.href = `${base}index.html`;
     if (about) about.href = `${base}index.html#about`;
     if (contact) contact.href = `${base}index.html#contact`;
@@ -36,7 +31,6 @@
   function scrollToHashAfterFooter() {
     const hash = window.location.hash;
     if (!hash) return;
-
     const id = hash.slice(1);
     setTimeout(() => {
       const target = document.getElementById(id);
@@ -46,15 +40,24 @@
 
   async function init() {
     const base = detectBasePath();
-
     await loadInclude(`${base}includes/navbar.html`, "navbar-placeholder");
     setNavLinks(base);
-
     await loadInclude(`${base}includes/footer.html`, "footer-placeholder");
+    function setCityLinks(base) {
+      const kyoto = document.querySelector('[data-page="kyoto"]');
+      const paris = document.querySelector('[data-page="paris"]');
+      const milan = document.querySelector('[data-page="milan"]');
+      const cairo = document.querySelector('[data-page="cairo"]');
+      if (kyoto) kyoto.href = `${base}pages/kyoto.html`;
+      if (paris) paris.href = `${base}pages/paris.html`;
+      if (milan) milan.href = `${base}pages/milan.html`;
+      if (cairo) cairo.href = `${base}pages/cairo.html`;
+    }
+    setCityLinks(base);
     scrollToHashAfterFooter();
 
-    if (typeof window.initNavbar === "function") window.initNavbar();
-  }
+  if (typeof window.initNavbar === "function") window.initNavbar();
+}
 
   document.addEventListener("DOMContentLoaded", init);
 })();
