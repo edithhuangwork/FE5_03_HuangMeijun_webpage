@@ -284,6 +284,98 @@ body {
   }
 }
 
+/* Sidebar */
+.floating-sidebar {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .sidebar-trigger {
+    width: 44px;
+    height: 44px;
+    background: var(--color-offwhite);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    transition: all 0.32s ease;
+  }
+  &:hover .sidebar-trigger {
+    border-radius: 22px;
+    height: auto;
+    padding: 18px 14px;
+    width: 165px;
+    background: var(--color-offwhite);
+    color: var(--color-italianred);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  .sidebar-menu,
+  .back-to-top {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+  &:hover .sidebar-menu,
+  &:hover .back-to-top {
+    display: flex;
+  }
+  .sidebar-menu {
+    li {
+      a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--color-darkcharcoal);
+        text-decoration: none;
+        font-family: var(--font-serif);
+        padding: 6px 4px;
+        border-radius: 8px;
+        transition: 0.24s;
+        &:hover {
+          background: var(--color-lightbeige);
+          color: var(--color-italianred);
+          padding-left: 8px;
+        }
+        i {
+          color: var(--color-italianred);
+          font-size: 15px;
+          width: 16px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .back-to-top {
+    background: transparent;
+    border: none;
+    color: var(--color-italianred);
+    font-size: 16px;
+    padding: 10px 0 0;
+    cursor: pointer;
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .floating-sidebar {
+    right: 12px;
+    .sidebar-trigger {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
 @media (max-width: 1200px) {
   .destination-title {
     font-size: 4.5rem;
