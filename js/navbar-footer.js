@@ -1,18 +1,25 @@
 (function () {
   function detectBasePath() {
-    // if current page is /pages/xxx.html then we are in a subfolder
     const path = window.location.pathname;
+    // If current page is within /pages/, go up one level
     if (path.includes("/pages/")) return "../";
+    // On GitHub Pages, home might be /<repo>/ (pathname ends with /)
     return "./";
   }
 
   async function loadInclude(url, elementId) {
-    const res = await fetch(url, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
-    const html = await res.text();
+    console.log("[navbar-footer] fetch ->", url);
 
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) {
+      console.error("[navbar-footer] 404/failed ->", url, res.status);
+      throw new Error(`Failed to load ${url}: ${res.status}`);
+    }
+
+    const html = await res.text();
     const el = document.getElementById(elementId);
     if (!el) throw new Error(`Element #${elementId} not found`);
+
     el.innerHTML = html;
   }
 
@@ -23,16 +30,13 @@
 
     if (home) home.href = `${base}index.html`;
     if (about) about.href = `${base}index.html#about`;
-
-    // ✅ contact 是 footer 裡，所以也指向根頁面的 #contact
     if (contact) contact.href = `${base}index.html#contact`;
   }
 
   function scrollToHashAfterFooter() {
-    const hash = window.location.hash; // "#contact" or "#about" etc
+    const hash = window.location.hash;
     if (!hash) return;
 
-    // footer 是後插入的，所以用 timeout 再找一次
     const id = hash.slice(1);
     setTimeout(() => {
       const target = document.getElementById(id);
