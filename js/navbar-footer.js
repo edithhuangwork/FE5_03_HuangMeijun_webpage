@@ -1,11 +1,14 @@
 (function () {
   function detectBasePath() {
     const path = window.location.pathname;
+
     // If current page is within /pages/, go up one level
     if (path.includes("/pages/")) return "../";
-    // On GitHub Pages, home might be /<repo>/ (pathname ends with /)
+
+    // Otherwise (e.g., index.html at repo root), stay in current level
     return "./";
   }
+
   async function loadInclude(url, elementId) {
     console.log("[navbar-footer] fetch ->", url);
     const res = await fetch(url, { cache: "no-store" });
@@ -23,14 +26,34 @@
     const home = document.querySelector('[data-nav="home"]');
     const about = document.querySelector('[data-nav="about"]');
     const contact = document.querySelector('[data-nav="contact"]');
+
     if (home) home.href = `${base}index.html`;
     if (about) about.href = `${base}index.html#about`;
     if (contact) contact.href = `${base}index.html#contact`;
   }
 
+  function setCityLinks(base) {
+    const kyoto = document.querySelector('[data-page="kyoto"]');
+    const paris = document.querySelector('[data-page="paris"]');
+    const milan = document.querySelector('[data-page="milan"]');
+    const cairo = document.querySelector('[data-page="cairo"]');
+
+    if (kyoto) kyoto.href = `${base}pages/kyoto.html`;
+    if (paris) paris.href = `${base}pages/paris.html`;
+    if (milan) milan.href = `${base}pages/milan.html`;
+    if (cairo) cairo.href = `${base}pages/cairo.html`;
+  }
+
+  function setLogoSrc(base) {
+    document.querySelectorAll('img[data-logo]').forEach((img) => {
+      img.src = `${base}assets/logo.png`;
+    });
+  }
+
   function scrollToHashAfterFooter() {
     const hash = window.location.hash;
     if (!hash) return;
+
     const id = hash.slice(1);
     setTimeout(() => {
       const target = document.getElementById(id);
@@ -40,24 +63,18 @@
 
   async function init() {
     const base = detectBasePath();
+
     await loadInclude(`${base}includes/navbar.html`, "navbar-placeholder");
-    setNavLinks(base);
     await loadInclude(`${base}includes/footer.html`, "footer-placeholder");
-    function setCityLinks(base) {
-      const kyoto = document.querySelector('[data-page="kyoto"]');
-      const paris = document.querySelector('[data-page="paris"]');
-      const milan = document.querySelector('[data-page="milan"]');
-      const cairo = document.querySelector('[data-page="cairo"]');
-      if (kyoto) kyoto.href = `${base}pages/kyoto.html`;
-      if (paris) paris.href = `${base}pages/paris.html`;
-      if (milan) milan.href = `${base}pages/milan.html`;
-      if (cairo) cairo.href = `${base}pages/cairo.html`;
-    }
+
+    setNavLinks(base);
     setCityLinks(base);
+    setLogoSrc(base);
+
     scrollToHashAfterFooter();
 
-  if (typeof window.initNavbar === "function") window.initNavbar();
-}
+    if (typeof window.initNavbar === "function") window.initNavbar();
+  }
 
   document.addEventListener("DOMContentLoaded", init);
 })();
